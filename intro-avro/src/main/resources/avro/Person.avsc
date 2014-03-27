@@ -1,0 +1,24 @@
+{ 
+    "type": "record",
+    "name": "Person",
+    "namespace": "jesg.avro",
+    "doc": "A person has a name, phone number, and an address.",
+    "fields": [
+        {"name": "name", "type": "string"},
+        {"name": "phonenumber", "type": "string", "order": "ignore"},
+        {"name": "address", "type": 
+            { 
+                "type": "record",
+                "name": "Address",
+                "namespace": "jesg.avro",
+                "doc": "An Address has a street, state, city, and zip code",
+                "fields": [
+                    {"name": "state", "type": "string"},
+                    {"name": "city", "type": "string"},
+                    {"name": "street", "type": "string", "order": "ignore"},
+                    {"name": "zipcode", "type": "string", "order": "ignore"}
+                ]
+            }
+        }
+    ]
+}
